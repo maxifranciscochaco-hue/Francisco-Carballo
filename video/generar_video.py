@@ -244,7 +244,7 @@ CAP4 = ["Primero se hormigona el pedestal con los bulones de anclaje ubicados co
         "Luego arandela, tuerca y contratuerca; por último, el grout sin retracción bajo la placa.",
         "La posición de cada bulón se controla en planta: un error acá se arrastra a toda la nave."]
 def s_anclajes(d, sec, dur):
-    header(d, 3, "Anclajes: bulones, placa base y grout", sec)
+    header(d, 4, "Anclajes: bulones, placa base y grout", sec)
     cx = 400
     yt = 470                      # tope pedestal
     kp = r(sec, 0.4, 1.0)
@@ -324,7 +324,7 @@ CAP5 = ["El plomo mide si la columna está perfectamente vertical.",
         "Tolerancia de referencia: desvío máximo de la altura dividido 500.",
         "Ejemplo: en una columna de 8 metros, el desvío admisible es de 16 milímetros."]
 def s_plomo(d, sec, dur):
-    header(d, 4, "Plomos: verticalidad de columnas", sec)
+    header(d, 5, "Plomos: verticalidad de columnas", sec)
     bx, gy, top = 380, 560, 175
     corr = r(sec, 4.2, 3.0)
     dx = 70 * (1 - corr)
@@ -381,7 +381,7 @@ CAP6 = ["Los niveles fijan las cotas de cada elemento respecto de una referencia
         "Un error de nivel en las placas se traduce en cerchas torcidas y correas desalineadas.",
         "Además, la cercha se fabrica con contraflecha para compensar su propio peso."]
 def s_niveles(d, sec, dur):
-    header(d, 5, "Niveles: cotas de la estructura", sec)
+    header(d, 6, "Niveles: cotas de la estructura", sec)
     gy = 560
     xl, xr = 140, 640
     ytop = 330
@@ -431,7 +431,7 @@ CAP7 = ["La secuencia de montaje ordena todos los controles.",
         "Cuatro: izar y fijar las cabreadas controlando el nivel de apoyo.",
         "Cinco y seis: arriostrar, colocar correas y recién después hacer el grout final."]
 def s_secuencia(d, sec, dur):
-    header(d, 6, "Secuencia de montaje y controles", sec)
+    header(d, 7, "Secuencia de montaje y controles", sec)
     steps = [("Replanteo", "Verificar bulones: posición en planta, proyección y rosca limpia"),
              ("Placas y columnas", "Nivelar con tuercas, izar columnas y apoyar"),
              ("Plomo", "Plomar en 2 ejes y asegurar con tensores provisorios"),
@@ -454,7 +454,7 @@ CAP8 = ["Antes de dar por terminado el montaje, repasá esta lista.",
         "Recordá que los valores mostrados son de referencia: manda el proyecto y el pliego.",
         "Seguridad primero: arnés, línea de vida y nada se suelta hasta quedar fijo."]
 def s_checklist(d, sec, dur):
-    header(d, 7, "Checklist de control en obra", sec)
+    header(d, 8, "Checklist de control en obra", sec)
     items = [("Anclajes", "posición, proyección y rosca de cada bulón", ORANGE),
              ("Placas base", "nivel, asiento firme y grout completo", YELLOW),
              ("Columnas", "plomo en X e Y dentro de H/500 (ref.)", GREEN),
@@ -473,8 +473,50 @@ def s_checklist(d, sec, dur):
     d.text((W / 2, 592), "con el proyecto, el cálculo y el pliego de la obra.", 18, WHITE, False, "mm", kb)
     caption(d, CAP8, sec, dur)
 
+
+CAP_OBRA = ["Veamos ahora todo esto en una obra real: un galpón con pórticos de cabreadas y columnas reticuladas.",
+            "Adentro, se ve cómo las cabreadas sostienen las correas y la cubierta.",
+            "Las columnas también son reticuladas: dos cordones verticales unidos por diagonales.",
+            "Durante el montaje se trabaja con arneses y líneas de vida, y se controla plomo y nivel de cada pórtico."]
+FOTOS = [("obra1.jpg", "Vista general del pórtico", [((0.45, 0.30), "Cabreada reticulada"), ((0.60, 0.42), "Correas"), ((0.95, 0.45), "Columna reticulada"), ((0.30, 0.66), "Cerramiento de bloques")]),
+         ("obra2.jpg", "Interior terminado", [((0.50, 0.50), "Cabreada reticulada"), ((0.65, 0.18), "Correas + cubierta"), ((0.64, 0.72), "Columna reticulada"), ((0.30, 0.66), "Mampostería + cerramiento")]),
+         ("obra3.jpg", "Columnas y cabreadas en fila", [((0.50, 0.28), "Cabreada reticulada"), ((0.30, 0.38), "Correas"), ((0.61, 0.65), "Columna reticulada"), ((0.80, 0.45), "Columna de esquina")]),
+         ("obra4.jpg", "Montaje en altura", [((0.50, 0.30), "Cabreada"), ((0.69, 0.41), "Operarios con arnés"), ((0.06, 0.62), "Columna: control de plomo"), ((0.40, 0.88), "Fundación / nivel de piso")])]
+_ph = {}
+def photo(name, maxw, maxh):
+    if (name, maxw, maxh) not in _ph:
+        im = Image.open(os.path.join(OUT, "fotos", name)).convert("RGB")
+        sc = min(maxw * SS / im.width, maxh * SS / im.height)
+        _ph[(name, maxw, maxh)] = im.resize((int(im.width * sc), int(im.height * sc)), Image.LANCZOS)
+    return _ph[(name, maxw, maxh)]
+
+def s_obra(d, sec, dur):
+    header(d, 3, "En obra real: lo que acabamos de ver", sec)
+    per = dur / len(FOTOS)
+    i = min(len(FOTOS) - 1, int(sec / per))
+    t = sec - i * per
+    name, ttl, marks = FOTOS[i]
+    im = photo(name, 700, 510)
+    fa = min(cl(t / 0.5), cl((per - t) / 0.4))
+    x0, y0 = 60, 105 + (510 - im.height / SS) / 2
+    base = d.im.crop((int(x0 * SS), int(y0 * SS), int(x0 * SS) + im.width, int(y0 * SS) + im.height))
+    d.im.paste(Image.blend(base, im, fa), (int(x0 * SS), int(y0 * SS)))
+    pw, ph = im.width / SS, im.height / SS
+    d.text((800, 140), ttl, 26, WHITE, True, "lm", fa)
+    for j, ((fx, fy), lab) in enumerate(marks):
+        a = r(t, 0.8 + j * 0.7, 0.4) * fa
+        if a <= 0: continue
+        cx, cy = x0 + fx * pw, y0 + fy * ph
+        d.circ(cx, cy, 15, mix(ORANGE, BG, a), mix(WHITE, BG, a))
+        d.text((cx, cy), str(j + 1), 18, BG, True, "mm", a)
+        yy = 215 + j * 62
+        d.circ(815, yy, 15, mix(ORANGE, BG, a))
+        d.text((815, yy), str(j + 1), 18, BG, True, "mm", a)
+        d.text((845, yy), lab, 22, WHITE, True, "lm", a)
+    caption(d, CAP_OBRA, sec, dur)
+
 SCENES = [(s_title, 5, ["Estructura de perfil reticulado para galpones y naves industriales: anclajes, plomos y niveles."]),
-          (s_truss, 11, CAP2), (s_nave, 11, CAP3), (s_anclajes, 14, CAP4),
+          (s_truss, 11, CAP2), (s_nave, 11, CAP3), (s_obra, 24, CAP_OBRA), (s_anclajes, 14, CAP4),
           (s_plomo, 12, CAP5), (s_niveles, 12, CAP6), (s_secuencia, 11, CAP7), (s_checklist, 10, CAP8)]
 
 def starts():
@@ -506,7 +548,7 @@ def fmt(t):
 def write_text():
     st, total = starts()
     srt, md, n = [], ["# Guion de locución — Estructura de perfil reticulado en naves industriales\n"], 1
-    titles = ["Título", "1. El perfil reticulado", "2. La nave", "3. Anclajes", "4. Plomos", "5. Niveles", "6. Secuencia de montaje", "7. Checklist"]
+    titles = ["Título", "1. El perfil reticulado", "2. La nave", "3. En obra real (fotos)", "4. Anclajes", "5. Plomos", "6. Niveles", "7. Secuencia de montaje", "8. Checklist"]
     for k, (f, dur, cap) in enumerate(SCENES):
         md.append(f"\n## {titles[k]}  ({int(st[k])}–{int(st[k] + dur)} s)\n")
         for j, s in enumerate(cap):

@@ -35,93 +35,109 @@ Las columnas descargan en placas base, ancladas a pedestales de hormigón.
 Todo el conjunto depende de tres controles: anclajes, plomos y niveles.
 
 10
-00:00:27,000 --> 00:00:29,750
-Primero se hormigona el pedestal con los bulones de anclaje ubicados con una plantilla.
+00:00:27,000 --> 00:00:32,950
+Veamos ahora todo esto en una obra real: un galpón con pórticos de cabreadas y columnas reticuladas.
 
 11
-00:00:29,800 --> 00:00:32,550
-Los bulones son barras roscadas con gancho o placa en el extremo embebido.
+00:00:33,000 --> 00:00:38,950
+Adentro, se ve cómo las cabreadas sostienen las correas y la cubierta.
 
 12
-00:00:32,600 --> 00:00:35,350
-Se colocan tuercas de nivelación y sobre ellas se apoya la placa base.
+00:00:39,000 --> 00:00:44,950
+Las columnas también son reticuladas: dos cordones verticales unidos por diagonales.
 
 13
-00:00:35,399 --> 00:00:38,150
-Luego arandela, tuerca y contratuerca; por último, el grout sin retracción bajo la placa.
+00:00:45,000 --> 00:00:50,950
+Durante el montaje se trabaja con arneses y líneas de vida, y se controla plomo y nivel de cada pórtico.
 
 14
-00:00:38,200 --> 00:00:40,950
-La posición de cada bulón se controla en planta: un error acá se arrastra a toda la nave.
+00:00:51,000 --> 00:00:53,750
+Primero se hormigona el pedestal con los bulones de anclaje ubicados con una plantilla.
 
 15
-00:00:41,000 --> 00:00:43,350
-El plomo mide si la columna está perfectamente vertical.
+00:00:53,799 --> 00:00:56,550
+Los bulones son barras roscadas con gancho o placa en el extremo embebido.
 
 16
-00:00:43,399 --> 00:00:45,750
-Se busca con plomada, nivel láser o estación total, siempre en dos ejes: X e Y.
+00:00:56,600 --> 00:00:59,350
+Se colocan tuercas de nivelación y sobre ellas se apoya la placa base.
 
 17
-00:00:45,799 --> 00:00:48,150
-Si la columna está inclinada, se corrige con las tuercas de nivelación y tensores provisorios.
+00:00:59,399 --> 00:01:02,150
+Luego arandela, tuerca y contratuerca; por último, el grout sin retracción bajo la placa.
 
 18
-00:00:48,200 --> 00:00:50,550
-Tolerancia de referencia: desvío máximo de la altura dividido 500.
+00:01:02,200 --> 00:01:04,950
+La posición de cada bulón se controla en planta: un error acá se arrastra a toda la nave.
 
 19
-00:00:50,600 --> 00:00:52,950
-Ejemplo: en una columna de 8 metros, el desvío admisible es de 16 milímetros.
+00:01:05,000 --> 00:01:07,350
+El plomo mide si la columna está perfectamente vertical.
 
 20
-00:00:53,000 --> 00:00:55,350
-Los niveles fijan las cotas de cada elemento respecto de una referencia única de obra.
+00:01:07,400 --> 00:01:09,750
+Se busca con plomada, nivel láser o estación total, siempre en dos ejes: X e Y.
 
 21
-00:00:55,399 --> 00:00:57,750
-Se transfieren con nivel óptico, láser rotativo o hilo de nylon entre columnas.
+00:01:09,799 --> 00:01:12,150
+Si la columna está inclinada, se corrige con las tuercas de nivelación y tensores provisorios.
 
 22
-00:00:57,799 --> 00:01:00,150
-Hay cuatro cotas clave: pedestal, placa base, apoyo de la cabreada y cumbrera.
+00:01:12,200 --> 00:01:14,549
+Tolerancia de referencia: desvío máximo de la altura dividido 500.
 
 23
-00:01:00,200 --> 00:01:02,550
-Un error de nivel en las placas se traduce en cerchas torcidas y correas desalineadas.
+00:01:14,599 --> 00:01:16,950
+Ejemplo: en una columna de 8 metros, el desvío admisible es de 16 milímetros.
 
 24
-00:01:02,600 --> 00:01:04,950
-Además, la cercha se fabrica con contraflecha para compensar su propio peso.
+00:01:17,000 --> 00:01:19,350
+Los niveles fijan las cotas de cada elemento respecto de una referencia única de obra.
 
 25
-00:01:05,000 --> 00:01:07,150
-La secuencia de montaje ordena todos los controles.
+00:01:19,400 --> 00:01:21,750
+Se transfieren con nivel óptico, láser rotativo o hilo de nylon entre columnas.
 
 26
-00:01:07,200 --> 00:01:09,350
-Uno: replanteo y verificación de bulones, planta y cotas, antes de izar nada.
+00:01:21,799 --> 00:01:24,150
+Hay cuatro cotas clave: pedestal, placa base, apoyo de la cabreada y cumbrera.
 
 27
-00:01:09,400 --> 00:01:11,549
-Dos y tres: nivelar placas, colocar columnas y plomarlas con tensores provisorios.
+00:01:24,200 --> 00:01:26,549
+Un error de nivel en las placas se traduce en cerchas torcidas y correas desalineadas.
 
 28
-00:01:11,599 --> 00:01:13,750
-Cuatro: izar y fijar las cabreadas controlando el nivel de apoyo.
+00:01:26,599 --> 00:01:28,950
+Además, la cercha se fabrica con contraflecha para compensar su propio peso.
 
 29
-00:01:13,799 --> 00:01:15,950
-Cinco y seis: arriostrar, colocar correas y recién después hacer el grout final.
+00:01:29,000 --> 00:01:31,150
+La secuencia de montaje ordena todos los controles.
 
 30
-00:01:16,000 --> 00:01:19,283
-Antes de dar por terminado el montaje, repasá esta lista.
+00:01:31,200 --> 00:01:33,350
+Uno: replanteo y verificación de bulones, planta y cotas, antes de izar nada.
 
 31
-00:01:19,333 --> 00:01:22,616
-Recordá que los valores mostrados son de referencia: manda el proyecto y el pliego.
+00:01:33,400 --> 00:01:35,549
+Dos y tres: nivelar placas, colocar columnas y plomarlas con tensores provisorios.
 
 32
-00:01:22,666 --> 00:01:25,950
+00:01:35,599 --> 00:01:37,750
+Cuatro: izar y fijar las cabreadas controlando el nivel de apoyo.
+
+33
+00:01:37,799 --> 00:01:39,950
+Cinco y seis: arriostrar, colocar correas y recién después hacer el grout final.
+
+34
+00:01:40,000 --> 00:01:43,283
+Antes de dar por terminado el montaje, repasá esta lista.
+
+35
+00:01:43,333 --> 00:01:46,616
+Recordá que los valores mostrados son de referencia: manda el proyecto y el pliego.
+
+36
+00:01:46,666 --> 00:01:49,950
 Seguridad primero: arnés, línea de vida y nada se suelta hasta quedar fijo.
