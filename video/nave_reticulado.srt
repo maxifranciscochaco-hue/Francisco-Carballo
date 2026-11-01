@@ -1,0 +1,143 @@
+1
+00:00:00,000 --> 00:00:04,950
+Estructura de perfil reticulado para galpones y naves industriales: anclajes, plomos y niveles.
+
+2
+00:00:05,000 --> 00:00:07,700
+El perfil reticulado, o cercha, es una viga armada formada por barras rectas unidas en nudos.
+
+3
+00:00:07,750 --> 00:00:10,449
+Los cordones, superior e inferior, resisten la flexión como tracción y compresión.
+
+4
+00:00:10,500 --> 00:00:13,199
+Los montantes y las diagonales unen los cordones y transmiten el corte.
+
+5
+00:00:13,250 --> 00:00:15,949
+Cada barra trabaja solo a tracción o compresión: por eso salva grandes luces con poco acero.
+
+6
+00:00:16,000 --> 00:00:18,699
+En una nave industrial, la cercha apoya sobre columnas y forma el pórtico principal.
+
+7
+00:00:18,750 --> 00:00:21,449
+Sobre el cordón superior se fijan las correas, que reciben la cubierta.
+
+8
+00:00:21,500 --> 00:00:24,199
+Las columnas descargan en placas base, ancladas a pedestales de hormigón.
+
+9
+00:00:24,250 --> 00:00:26,949
+Todo el conjunto depende de tres controles: anclajes, plomos y niveles.
+
+10
+00:00:27,000 --> 00:00:32,950
+Veamos ahora todo esto en una obra real: un galpón con pórticos de cabreadas y columnas reticuladas.
+
+11
+00:00:33,000 --> 00:00:38,950
+Adentro, se ve cómo las cabreadas sostienen las correas y la cubierta.
+
+12
+00:00:39,000 --> 00:00:44,950
+Las columnas también son reticuladas: dos cordones verticales unidos por diagonales.
+
+13
+00:00:45,000 --> 00:00:50,950
+Durante el montaje se trabaja con arneses y líneas de vida, y se controla plomo y nivel de cada pórtico.
+
+14
+00:00:51,000 --> 00:00:53,750
+Primero se hormigona el pedestal con los bulones de anclaje ubicados con una plantilla.
+
+15
+00:00:53,799 --> 00:00:56,550
+Los bulones son barras roscadas con gancho o placa en el extremo embebido.
+
+16
+00:00:56,600 --> 00:00:59,350
+Se colocan tuercas de nivelación y sobre ellas se apoya la placa base.
+
+17
+00:00:59,399 --> 00:01:02,150
+Luego arandela, tuerca y contratuerca; por último, el grout sin retracción bajo la placa.
+
+18
+00:01:02,200 --> 00:01:04,950
+La posición de cada bulón se controla en planta: un error acá se arrastra a toda la nave.
+
+19
+00:01:05,000 --> 00:01:07,350
+El plomo mide si la columna está perfectamente vertical.
+
+20
+00:01:07,400 --> 00:01:09,750
+Se busca con plomada, nivel láser o estación total, siempre en dos ejes: X e Y.
+
+21
+00:01:09,799 --> 00:01:12,150
+Si la columna está inclinada, se corrige con las tuercas de nivelación y tensores provisorios.
+
+22
+00:01:12,200 --> 00:01:14,549
+Tolerancia de referencia: desvío máximo de la altura dividido 500.
+
+23
+00:01:14,599 --> 00:01:16,950
+Ejemplo: en una columna de 8 metros, el desvío admisible es de 16 milímetros.
+
+24
+00:01:17,000 --> 00:01:19,350
+Los niveles fijan las cotas de cada elemento respecto de una referencia única de obra.
+
+25
+00:01:19,400 --> 00:01:21,750
+Se transfieren con nivel óptico, láser rotativo o hilo de nylon entre columnas.
+
+26
+00:01:21,799 --> 00:01:24,150
+Hay cuatro cotas clave: pedestal, placa base, apoyo de la cabreada y cumbrera.
+
+27
+00:01:24,200 --> 00:01:26,549
+Un error de nivel en las placas se traduce en cerchas torcidas y correas desalineadas.
+
+28
+00:01:26,599 --> 00:01:28,950
+Además, la cercha se fabrica con contraflecha para compensar su propio peso.
+
+29
+00:01:29,000 --> 00:01:31,150
+La secuencia de montaje ordena todos los controles.
+
+30
+00:01:31,200 --> 00:01:33,350
+Uno: replanteo y verificación de bulones, planta y cotas, antes de izar nada.
+
+31
+00:01:33,400 --> 00:01:35,549
+Dos y tres: nivelar placas, colocar columnas y plomarlas con tensores provisorios.
+
+32
+00:01:35,599 --> 00:01:37,750
+Cuatro: izar y fijar las cabreadas controlando el nivel de apoyo.
+
+33
+00:01:37,799 --> 00:01:39,950
+Cinco y seis: arriostrar, colocar correas y recién después hacer el grout final.
+
+34
+00:01:40,000 --> 00:01:43,283
+Antes de dar por terminado el montaje, repasá esta lista.
+
+35
+00:01:43,333 --> 00:01:46,616
+Recordá que los valores mostrados son de referencia: manda el proyecto y el pliego.
+
+36
+00:01:46,666 --> 00:01:49,950
+Seguridad primero: arnés, línea de vida y nada se suelta hasta quedar fijo.
