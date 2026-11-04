@@ -93,6 +93,34 @@ class D:
     def out(self):
         return self.im.resize((W, H), Image.LANCZOS)
 
+
+FI = "/usr/share/fonts/truetype/dejavu/DejaVuSans-BoldOblique.ttf"
+CREAM = (248, 240, 214)
+MARKRED = (232, 52, 44)
+def mark(d, cx, cy, rx, ry, label, a=1.0, k=1.0, side="up", bound=None, sz=20):
+    """circulo rojo irregular + rotulo crema con borde oscuro (estilo explicativo)"""
+    if k > 0 and a > 0:
+        n = 60
+        tmax = 2 * math.pi * 1.1 * k
+        pts = []
+        steps = max(2, int(n * 1.1 * k))
+        for i in range(steps + 1):
+            t = tmax * i / steps - 0.6
+            rr = 1 + 0.05 * math.sin(2.3 * t) + 0.03 * math.sin(5 * t) + 0.04 * (t + 0.6) / (2 * math.pi)
+            pts.append((cx + rx * rr * math.cos(t), cy + ry * rr * math.sin(t)))
+        col = mix(MARKRED, BG, a)
+        for q in range(len(pts) - 1):
+            d.line(pts[q], pts[q + 1], col, 3.2)
+    if a > 0 and k >= 0.6:
+        ty = cy - ry - 16 if side == "up" else cy + ry + 16
+        tx = cx
+        if bound:
+            f = font(sz, True)
+            wtxt = d.d.textlength(label, font=f) / SS
+            tx = min(max(tx, bound[0] + wtxt / 2 + 4), bound[1] - wtxt / 2 - 4)
+        d.d.text(d.P((tx, ty)), label, font=font(sz, True), fill=mix(CREAM, BG, a),
+                 anchor="mm", stroke_width=int(3 * SS), stroke_fill=mix((20, 20, 20), BG, a))
+
 # ---------- elementos comunes ----------
 def header(d, n, title, sec):
     a = r(sec, 0.1, 0.6)
@@ -233,6 +261,7 @@ def s_nave(d, sec, dur):
     label("Cumbrera", (T[5][0], T[5][1] - 16), (860, 160), GREY, 6.0) if False else None
     label("Columna", (xr, 450), (860, 400), STEEL, 7.0)
     label("Placa base + anclajes", (xr + 28, gy - 3), (860, 520), YELLOW, 7.8)
+    mark(d, xr, gy - 4, 46, 26, "anclajes", r(sec, 8.0, 0.4), r(sec, 8.0, 1.0), "up", None, 20)
     label("Pedestal de H°A°", (xr + 34, gy + 30), (860, 585), GREY, 8.6)
     # flecha de luz
     d.dim((xl, 625 - 10), (xr, 625 - 10), "LUZ", ORANGE, r(sec, 9.2, 0.6), (0, -16)) if False else None
@@ -311,6 +340,8 @@ def s_anclajes(d, sec, dur):
     item(320, YELLOW, "Placa base", "reparte la carga al hormigón", 5.8)
     item(390, WHITE, "Arandela + tuerca + contratuerca", "ajuste final, sin aflojarse", 7.0)
     item(460, (150, 160, 150), "Grout sin retracción", "25 a 50 mm bajo la placa", 8.6)
+    for x in bx:
+        mark(d, x, yt - 25, 38, 34, "", r(sec, 9.5, 0.4), r(sec, 9.5, 1.0))
     kk = r(sec, 9.8, 0.6)
     if kk > 0:
         d.rrect(760, 510, 1230, 590, PANEL, ORANGE, 8, 2)
@@ -504,15 +535,15 @@ def s_obra(d, sec, dur):
     pw, ph = im.width / SS, im.height / SS
     d.text((800, 140), ttl, 26, WHITE, True, "lm", fa)
     for j, ((fx, fy), lab) in enumerate(marks):
-        a = r(t, 0.8 + j * 0.7, 0.4) * fa
-        if a <= 0: continue
+        t0 = 0.8 + j * 0.9
+        a = fa
+        k = r(t, t0, 0.7)
+        if k <= 0: continue
         cx, cy = x0 + fx * pw, y0 + fy * ph
-        d.circ(cx, cy, 15, mix(ORANGE, BG, a), mix(WHITE, BG, a))
-        d.text((cx, cy), str(j + 1), 18, BG, True, "mm", a)
+        mark(d, cx, cy, 52, 36, lab, a, k, "up" if j % 2 == 0 else "down", (x0, x0 + pw), 16)
         yy = 215 + j * 62
-        d.circ(815, yy, 15, mix(ORANGE, BG, a))
-        d.text((815, yy), str(j + 1), 18, BG, True, "mm", a)
-        d.text((845, yy), lab, 22, WHITE, True, "lm", a)
+        d.circ(815, yy, 9, mix(MARKRED, BG, a * k))
+        d.text((840, yy), lab, 22, WHITE, True, "lm", a * k)
     caption(d, CAP_OBRA, sec, dur)
 
 SCENES = [(s_title, 5, ["Estructura de perfil reticulado para galpones y naves industriales: anclajes, plomos y niveles."]),
